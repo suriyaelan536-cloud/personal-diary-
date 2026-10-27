@@ -1,0 +1,72 @@
+:root {
+  --rose: #c65d7b;
+  --rose-dark: #98435d;
+  --pink: #f9e8ed;
+  --cream: #fffaf8;
+  --ink: #382c32;
+  --muted: #887780;
+  --line: #f0dce2;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 10% 5%, #f8e2e9 0, transparent 28rem),
+    linear-gradient(180deg, #fff9f8 0%, #fffdfc 100%);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+.app { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 42px 0 28px; }
+.hero { text-align: center; padding: 12px 10px 30px; }
+.brand-mark {
+  display: grid; place-items: center; width: 52px; height: 52px;
+  margin: 0 auto 15px; border-radius: 18px; background: var(--pink);
+  color: var(--rose); font-size: 27px;
+}
+.eyebrow { margin: 0 0 7px; color: var(--rose); font-size: 11px; font-weight: 800; letter-spacing: 2px; }
+h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(42px, 8vw, 62px); font-weight: 500; letter-spacing: -1.5px; }
+.subtitle { max-width: 440px; margin: 12px auto 0; color: var(--muted); }
+.write-card, .entry-card {
+  background: rgba(255,255,255,.92); border: 1px solid var(--line);
+  border-radius: 22px; box-shadow: 0 12px 35px rgba(115, 60, 80, .06);
+}
+.write-card { padding: clamp(20px, 5vw, 32px); }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 23px; }
+h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 29px; font-weight: 500; }
+.date-pill, .count-pill { flex-shrink: 0; padding: 8px 12px; border-radius: 999px; background: var(--pink); color: var(--rose-dark); font-size: 12px; font-weight: 700; }
+label { display: block; margin: 16px 0 7px; font-size: 13px; font-weight: 700; }
+input, select, textarea {
+  width: 100%; padding: 13px 14px; border: 1px solid var(--line); border-radius: 12px;
+  background: #fffdfd; color: var(--ink); font: inherit; outline: none; transition: border-color .2s, box-shadow .2s;
+}
+textarea { resize: vertical; min-height: 140px; }
+input:focus, select:focus, textarea:focus { border-color: #d58aa0; box-shadow: 0 0 0 3px #f9e8ed; }
+.form-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; }
+.privacy-note { margin: 0; color: var(--muted); font-size: 12px; }
+button { border: 0; border-radius: 12px; padding: 13px 18px; background: var(--rose); color: white; font: inherit; font-weight: 700; cursor: pointer; transition: transform .15s, background .15s; }
+button:hover { background: var(--rose-dark); transform: translateY(-1px); }
+button:focus-visible, .delete-button:focus-visible { outline: 3px solid #e6a7ba; outline-offset: 3px; }
+.status-message { min-height: 18px; margin: 12px 0 0; color: var(--rose-dark); font-size: 13px; }
+.entries-section { margin-top: 36px; }
+.entries-section .section-heading { margin-bottom: 17px; }
+.entries-list { display: grid; gap: 13px; }
+.entry-card { padding: 20px; }
+.entry-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.entry-title { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 500; overflow-wrap: anywhere; }
+.entry-meta { margin: 5px 0 12px; color: var(--muted); font-size: 12px; }
+.entry-body { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.entry-mood { display: inline-block; margin-bottom: 10px; padding: 5px 9px; border-radius: 999px; background: #fff2f5; color: var(--rose-dark); font-size: 12px; }
+.delete-button { flex-shrink: 0; padding: 7px 10px; background: transparent; border: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+.delete-button:hover { background: #fff0f3; color: var(--rose-dark); }
+.empty-state { padding: 26px 18px; border: 1px dashed #e8c7d1; border-radius: 16px; color: var(--muted); text-align: center; }
+footer { padding: 28px 0 0; color: var(--muted); text-align: center; font-size: 12px; }
+footer span { color: var(--rose); }
+@media (max-width: 520px) {
+  .app { padding-top: 24px; }
+  .form-footer { align-items: stretch; flex-direction: column; }
+  .form-footer button { width: 100%; }
+  .section-heading { align-items: flex-start; }
+  .date-pill { margin-top: 4px; }
+}

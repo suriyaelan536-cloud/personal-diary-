@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Pages | Personal Diary</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="brand-mark" aria-hidden="true">✿</div>
+      <p class="eyebrow">YOUR LITTLE CORNER OF THE WORLD</p>
+      <h1>Little Pages</h1>
+      <p class="subtitle">A quiet place for your thoughts, memories, and little moments.</p>
+    </header>
+
+    <section class="write-card" aria-labelledby="write-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">TODAY'S PAGE</p>
+          <h2 id="write-heading">Dear diary...</h2>
+        </div>
+        <span id="today-date" class="date-pill"></span>
+      </div>
+
+      <form id="entry-form">
+        <label for="entry-title">Entry title</label>
+        <input id="entry-title" type="text" maxlength="80" placeholder="A little title for today..." required>
+
+        <label for="entry-mood">How are you feeling?</label>
+        <select id="entry-mood">
+          <option value="🌷 Calm">🌷 Calm</option>
+          <option value="😊 Happy">😊 Happy</option>
+          <option value="✨ Excited">✨ Excited</option>
+          <option value="🌧️ Sad">🌧️ Sad</option>
+          <option value="😴 Tired">😴 Tired</option>
+          <option value="💭 Thoughtful">💭 Thoughtful</option>
+        </select>
+
+        <label for="entry-text">Your thoughts</label>
+        <textarea id="entry-text" rows="6" placeholder="Write anything on your mind. This page is yours..." required></textarea>
+
+        <div class="form-footer">
+          <p class="privacy-note">♡ Saved in this browser on this device.</p>
+          <button type="submit">Save my page <span aria-hidden="true">↗</span></button>
+        </div>
+        <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="entries-section" aria-labelledby="entries-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR MEMORIES</p>
+          <h2 id="entries-heading">Past pages</h2>
+        </div>
+        <span id="entry-count" class="count-pill">0 pages</span>
+      </div>
+      <div id="entries-list" class="entries-list"></div>
+      <p id="empty-state" class="empty-state">Your pages will appear here. Start with one small moment from today. 🌸</p>
+    </section>
+
+    <footer>Made with care, one page at a time <span aria-hidden="true">♡</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
